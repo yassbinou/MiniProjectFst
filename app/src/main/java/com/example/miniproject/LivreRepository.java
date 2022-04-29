@@ -25,4 +25,34 @@ public class LivreRepository  {
 
         });
     }
+    void delete(Livre livre){
+        AppDatabase.databaseWriteExecutor.execute(() ->{
+            mLivreDao.delete(livre);
+
+        });
+    }
+    void deleteById(int id){
+        AppDatabase.databaseWriteExecutor.execute(() ->{
+            mLivreDao.deleteById(id);
+
+        });
+    }
+    void updateById(int id, String titre, String isbn){
+        AppDatabase.databaseWriteExecutor.execute(() ->{
+            mLivreDao.updateById(id, titre, isbn);
+
+        });
+    }
+    void updateTitreById(int id, String titre){
+        AppDatabase.databaseWriteExecutor.execute(() ->{
+            mLivreDao.updateTitreById(id, titre);
+
+        });
+    }
+    void updateIsbnById(int id,  String isbn){
+        AppDatabase.databaseWriteExecutor.execute(() ->{
+            mLivreDao.updateIsbnById(id, isbn);
+
+        });
+    }
 }

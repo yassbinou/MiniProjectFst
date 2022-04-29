@@ -2,11 +2,10 @@ package com.example.miniproject;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
+
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,7 +20,6 @@ public abstract class AppDatabase extends RoomDatabase {
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     static AppDatabase getDatabase(final Context context) {
-        System.out.println("-------------------------herr------------------------------------------");
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
@@ -34,9 +32,5 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    /**
-     * Override the onCreate method to populate the database.
-     * For this sample, we clear the database every time it is created.
-     */
 
 }

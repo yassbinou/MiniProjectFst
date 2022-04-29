@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniProject">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".Activity_listview"
             android:exported="false" />
         <activity
             android:name=".Recherche"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

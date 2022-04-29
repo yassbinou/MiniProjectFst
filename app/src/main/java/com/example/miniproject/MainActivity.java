@@ -2,8 +2,6 @@ package com.example.miniproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         final Button affichage = findViewById(R.id.affichage);
         final Button recherche = findViewById(R.id.recherche);
-        final Button inserer = findViewById(R.id.inserer);
+        final Button inserer = findViewById(R.id.modif);
 
-        final TextInputEditText isbn = (TextInputEditText) findViewById(R.id.isbn);
-        final TextInputEditText titre = (TextInputEditText) findViewById(R.id.titre);
+        final TextInputEditText isbn =  findViewById(R.id.isbn);
+        final TextInputEditText titre = findViewById(R.id.titre);
 
         affichage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

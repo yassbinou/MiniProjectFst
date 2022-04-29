@@ -22,6 +22,20 @@ public interface LivreDao {
     @Update
     void update(Livre livre);
 
+
+    @Query("UPDATE  livre SET titre= :titre, isbn=:isbn WHERE id = :id" )
+    void updateById(int id,String titre, String isbn);
+
+    @Query("UPDATE  livre SET titre= :titre WHERE id = :id" )
+    void updateTitreById(int id,String titre);
+
+    @Query("UPDATE  livre SET  isbn=:isbn WHERE id = :id" )
+    void updateIsbnById(int id, String isbn);
+
     @Query("DELETE FROM livre")
     void deleteAll();
+
+    @Query("DELETE FROM livre Where id = :id")
+    void deleteById(int id);
+
 }

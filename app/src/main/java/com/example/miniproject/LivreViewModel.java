@@ -24,4 +24,21 @@ public class LivreViewModel extends AndroidViewModel {
     void insert(Livre livre) {
         mRepository.insert(livre);
     }
+
+    void delete(Livre livre){
+        mRepository.delete(livre);
+    }
+    void deleteById(int id){
+        mRepository.deleteById(id);
+    }
+
+    void updateById(int id, String titre, String isbn){
+        mRepository.updateById(id, titre, isbn);
+    }
+    void updateTitreById(int id, String titre){
+        mRepository.updateTitreById(id, titre);
+    }
+    void updateIsbnById(int id, String isbn){
+        mRepository.updateIsbnById(id, isbn);
+    }
 }
