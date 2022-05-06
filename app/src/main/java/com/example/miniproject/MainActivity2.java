@@ -23,8 +23,8 @@ public class MainActivity2 extends AppCompatActivity {
 
         final Button modif = findViewById(R.id.modif);
         final Button supp = findViewById(R.id.button);
-        final TextInputEditText isbn =  findViewById(R.id.isbn2);
-        final TextInputEditText titre =  findViewById(R.id.titre2);
+        final TextInputEditText isbn = findViewById(R.id.isbn2);
+        final TextInputEditText titre = findViewById(R.id.titre2);
 
         mLivreViewModel = new ViewModelProvider(this).get(LivreViewModel.class);
 
@@ -39,16 +39,14 @@ public class MainActivity2 extends AppCompatActivity {
         modif.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-System.out.println(isbn.getText().toString());
-if(!isbn.getText().toString().equals("") && !titre.getText().toString().equals("")){
-    mLivreViewModel.updateById(getIntent().getIntExtra("id", 1),titre.getText().toString(),isbn.getText().toString() );
-}
-else if (isbn.getText().toString().equals("") && !titre.getText().toString().equals("")){
-    mLivreViewModel.updateTitreById(getIntent().getIntExtra("id", 1),titre.getText().toString());
-}
-else if (!isbn.getText().toString().equals("") && titre.getText().toString().equals("")){
-    mLivreViewModel.updateIsbnById(getIntent().getIntExtra("id", 1),isbn.getText().toString());
-}
+                System.out.println(isbn.getText().toString());
+                if (!isbn.getText().toString().equals("") && !titre.getText().toString().equals("")) {
+                    mLivreViewModel.updateById(getIntent().getIntExtra("id", 1), titre.getText().toString(), isbn.getText().toString());
+                } else if (isbn.getText().toString().equals("") && !titre.getText().toString().equals("")) {
+                    mLivreViewModel.updateTitreById(getIntent().getIntExtra("id", 1), titre.getText().toString());
+                } else if (!isbn.getText().toString().equals("") && titre.getText().toString().equals("")) {
+                    mLivreViewModel.updateIsbnById(getIntent().getIntExtra("id", 1), isbn.getText().toString());
+                }
 
                 finish();
             }

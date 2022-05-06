@@ -24,9 +24,9 @@ public class Activity_listview extends AppCompatActivity {
         AtomicReference<ListAdp> listAdp = new AtomicReference<>(new ListAdp(null));
         mLivreViewModel = new ViewModelProvider(this).get(LivreViewModel.class);
 
-        mLivreViewModel.getAllLivre().observe(this, livre -> {
+               mLivreViewModel.getAllLivre().observe(this, livre -> {
             // Update the cached copy of the words in the adapter.
-             listAdp.set(new ListAdp(livre));
+            listAdp.set(new ListAdp(livre));
             listView.setAdapter(listAdp.get());
             //adapter.submitList(livre);
 
